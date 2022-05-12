@@ -19,7 +19,7 @@ public class KafkaProducer {
   }
 
   public void sendUser(User user) {
-    log.info(String.format("Json send %s", user));
+    log.info(String.format("User send %s", user));
     userKafkaTemplate.send("user", user);
   }
 }

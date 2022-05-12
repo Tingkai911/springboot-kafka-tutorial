@@ -21,7 +21,7 @@ public class SendToKafkaController {
   }
 
   @PostMapping("/user")
-  public ResponseEntity<String> publishJson(@RequestBody User user) {
+  public ResponseEntity<String> publishUser(@RequestBody User user) {
     kafkaProducer.sendUser(user);
     return ResponseEntity.ok("User send to the topic");
   }
