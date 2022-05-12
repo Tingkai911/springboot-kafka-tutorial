@@ -1,15 +1,33 @@
 server:
   port: 8083
 
+# for single kafka consumer/producer
+#spring:
+#  kafka:
+#    consumer:
+#      bootstrap-servers: localhost:9092
+#      group-id: myGroup
+#      auto-offset-reset: earliest
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#    producer:
+#      bootstrap-servers: localhost:9092
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
 spring:
   kafka:
-    consumer:
-      bootstrap-servers: localhost:9092
-      group-id: myGroup
-      auto-offset-reset: earliest
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     producer:
-      bootstrap-servers: localhost:9092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      string:
+        bootstrap-servers: localhost:9092
+      user:
+        bootstrap-servers: localhost:9092
+    consumer:
+      string:
+        bootstrap-servers: localhost:9092
+        group-id: myGroup
+        auto-offset-reset: earliest
+      user:
+        bootstrap-servers: localhost:9092
+        group-id: myGroup
+        auto-offset-reset: earliest

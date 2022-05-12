@@ -2,6 +2,7 @@ package net.javaguides.springbootkafkatutorial.kafka;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import net.javaguides.springbootkafkatutorial.model.User;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
@@ -9,11 +10,19 @@ import org.springframework.stereotype.Service;
 @Service
 @AllArgsConstructor
 public class KafkaConsumer {
+  @KafkaListener(
+      topics = "string",
+      groupId = "myGroup",
+      containerFactory = "kafkaListenerContainerFactory")
+  public void consumeMessage(String message) {
+    log.info(String.format("Message received -> %s", message));
+  }
 
-    // subscribe to the "javaguides" java topic
-    // groupId same as application.yml
-    @KafkaListener(topics = "javaguides", groupId = "myGroup")
-    public void consume(String message) {
-        log.info(String.format("Message received -> %s", message));
-    }
+  @KafkaListener(
+      topics = "user",
+      groupId = "myGroup",
+      containerFactory = "userKafkaListenerContainerFactory")
+  public void consumeUser(User user) {
+    log.info(String.format("User received -> %s", user));
+  }
 }

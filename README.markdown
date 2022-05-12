@@ -3,6 +3,7 @@ Springboot kafka tutorials:
 - https://youtube.com/playlist?list=PLGRDMO4rOGcNLwoack4ZiTyewUcF6y6BU
 - https://kafka.apache.org/quickstart
 - https://docs.spring.io/spring-kafka/reference/html/
+- https://howtodoinjava.com/kafka/multiple-consumers-example/
 
 ### Description 
 Demo springboot kafka project
