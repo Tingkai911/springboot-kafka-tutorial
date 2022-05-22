@@ -20,4 +20,10 @@ public class KafkaTopicConfig {
   public NewTopic userTopic() {
     return TopicBuilder.name("user").build();
   }
+
+  // wikimedia recent change example
+  @Bean
+  public NewTopic wikimediaTopic() {
+    return TopicBuilder.name("wikimedia_recent_change").build();
+  }
 }
